@@ -1,0 +1,535 @@
+
+	/* ПК версия */
+@media screen and (min-width: 1025px) {
+/* Главная страница */
+	body{
+	}
+	.header-mobile, .icon,.header-for-main-mobile{
+		display: none;
+	}
+	.header-for-desktop{
+		display: block;
+	}
+	.header-main .loginReg-menu{
+		display: flex;
+		align-items: center;
+	}
+	header{
+		background-image: url('../images/bgc.png');
+		background-repeat: no-repeat;
+		background-size: cover;
+		margin: 0;
+	}
+	.header-main{
+		text-align: initial;
+		margin: initial;
+		width: initial;
+		padding: 1.6vw 3.65vw;
+
+	}
+	.menu__items{
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		flex-direction: row;
+		width: 400px;
+	}
+	.login .authentication__items{
+		width: 125px;
+	}
+	.outin .authentication__items{
+		width: 162px;
+	}
+	.authentication__items{
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.header-main .login{
+		cursor: pointer;
+	}
+	.header-main .login:hover .personalAreaMenu{
+		display: block;
+	}
+	.authentication__avatar{
+		width: 35px;
+		height: 35px;
+		background-image: url('../images/photo888.png');
+		background-size: cover;
+	}
+	.authentication__userName{
+		font-size: 16px;
+		color: #006363;
+	}
+	.fa-chevron-down{
+		font-size: 14px;
+		color: #006363;
+	}
+	.loginReg-menu{
+		height: auto;
+		justify-content: space-between;
+	}
+	.menu__link{
+		font-size: 16px;
+		color: #006363;
+	}
+	.loginReg__items{
+		width: 125px;
+	}
+	.loginReg__link{
+		font-size: 14px;
+		color: #006363;
+	}
+	.header__logo{
+		width: 20%;
+		margin-top: 2.9vw;
+		margin-bottom: 1vw;
+	}
+	.sloganCreateBtn{
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		width: 100%;
+		justify-content: space-between;
+		align-items: flex-end;
+	}
+	.slogan{
+		display: block;
+		color: #fff;
+	}
+	.slogan__ask{
+		font-size: 3vw;
+		font-weight: 700;
+	}
+	.slogan__answer{
+		font-size: 2vw;
+		font-weight: 500;
+	}
+	.createBtn{
+		width: 31.5vw;
+		margin-top: 0;
+		margin-bottom: 0;
+		margin-left: auto;
+		margin-right: 0;
+	}
+	.createBtn__btn{
+        text-align: center;
+		font-size: 16px;
+		width: 48%;
+		padding: 10px 0;
+		border-radius: 5px;
+	}
+	.workers-jobs{
+		width: 950px;
+		flex-direction: row;
+		align-items: initial;
+		justify-content: space-between;
+		margin: 0 auto;
+	}
+	.workers, .jobs{
+		width: 455px;
+	}
+	.lineCenter{
+		display: initial;
+		width: 1px;
+		height: 585px;
+		background-color: #009999;
+		margin-top: 45px;
+	}
+	.section__title{
+		display: block;
+		font-size: calc(20px + 0.4vw);
+		color: #006363;
+		text-align: center;
+		margin: 1.5vw 0;
+	}
+	.searchBtn{
+		width: 455px;
+		padding: 4px 0;
+		margin: 0 0 15px 0;
+	}
+	.card{
+		width: 100%;
+		border: 1px solid #d0cece;
+		border-radius: 5px;
+		padding: 10px;
+	}
+	.topRow__name, .bottomRow__detailed{
+		font-size: 16px;
+	}
+	.topRow__rating{
+		font-size: 14px;
+	}
+	.topRow__price{
+		font-size: 14px;
+	}
+	.topRow__price span {
+		font-size: 16px;
+	}
+	.data__description{
+		font-size: 16px;
+	}
+	.bottomRow__create{
+		font-size: 14px;
+	}
+	.wrapAvatar{
+		width: 16%;
+	}
+	.wrapAvatar__avatar{
+		width: 55px;
+		height: 55px;
+	}
+	 /* Регистрация страница */
+	.form__fields,.form{
+	 	display: -webkit-flex;
+	 	display: -moz-flex;
+	 	display: -ms-flex;
+	 	display: -o-flex;
+	 	display: flex;
+	 	flex-direction: column;
+	 	align-items: center;
+	 }
+	.field{
+	 	align-items: initial;
+	 	margin: 0 0 10px 0;
+	 }
+	.form__input{
+		width: 300px;
+		text-align: initial;
+		padding-left: 7px;
+	}
+	.agreement{
+		display: block;
+		width: 300px;
+		font-size: 12px;
+		color: #838181;
+		margin: 10px 0 15px;
+	}
+	.agreement__link{
+		color: #009999;
+		text-decoration: underline;
+	}
+	.form__input[type='submit']{
+		position: static;
+		text-align: center;
+		margin: 15px 0;
+	}
+	.form__input__link{
+		display: block;
+		color: #fff;
+		background-color: #009999;
+		text-align: center;
+		border-radius: none;
+	}
+	footer{
+		display: block;
+		width: 100%;
+		height: 222px;
+		background-color: #000;
+		margin: 30px 0;
+	}
+	/* Вход */
+	.form__RememberRestorePassword{
+		width: 300px;
+		justify-content: space-between;
+	}
+	.remember{
+		display: flex;
+		align-items: center;
+	}
+	.remember__label{
+		font-size: 16px;
+	}
+	.remember__checbox{
+		width: 20px;
+		height: 20px;
+		border: 2px solid gray;
+		border-radius: 5px;
+		margin-right: 6px;
+	}
+	.restorePassword{
+		margin-top: 0;
+	}
+	.personalAreaMenu{
+		display: none;
+		position: absolute;
+		top: 3.2vw;
+		right: 3.65vw;
+		background-color: #fff;
+		z-index: 99;
+		padding: 5px 0;
+		box-shadow: 0 0 10px rgba(0,0,0,0.5);
+		border-radius: 3px;
+	}
+	.personalAreaMenu__link{
+		font-size: 14px;
+		display: block;
+		width: 130px;
+		padding: 12px 0 12px 7px;
+		color: #006363;
+	}
+	.personalAreaMenu__exit{
+		color: #ff7400;
+	}
+
+
+	/* Личный кабинет */
+	.menu-personal-area-mobile,.menu-personal-area-mobile__line,.workerStyle__name_surname,.sex{
+		display: none;
+	}
+	.menu-personal-area-desktop{
+		display: block;
+	}
+	.workerStyle__name_surname_sex{
+		display: block;
+		width: 70%;
+	}
+	.size_article700{
+		width: 700px;
+		margin: 0 auto;
+	}
+	.menu-personal-area-desktop{
+		width: 700px;
+		background-color: #009999;
+		margin: 0 auto;
+		padding: 10px 5px;
+		border-radius: 5px;
+		margin-bottom: 15px;
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		justify-content: space-between;
+	}
+	.menu-personal-area-desktop__items{
+		width: 45%;
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		justify-content: space-between;
+	}
+	.menu-personal-area-desktop__link{
+		font-size: 16px;
+		font-weight: 700;
+		color: white;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	.menu-personal-area-desktop__link:hover{
+		color: #ff7800;
+		background-color: #fff;
+		padding-top: 3px;
+		padding-bottom: 3px;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-radius: 30px;
+	}
+		/* Личный кабинет Настройки*/
+
+	.workerStyle{
+		border: 1px solid #009999;
+		border-radius: 10px;
+		padding: 40px;
+        margin-top: 0;
+	}
+	.workerStyle__avatar{
+		width: 150px;
+		height: 150px;
+	}
+	.workerStyle__ask{
+		width: 80%;
+	}
+	.ask_answer{
+		margin-bottom: 26px;
+	}
+		/* Личный кабинет Моя анкета */
+	.submenu__items{
+		height: initial;
+	}
+	.types_of_jobs{
+		position: initial;
+	}
+	.items_categories{
+		padding: 0;
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+	}
+	.item_category_jobs{
+		width: 34%;
+	}
+		/* Личный кабинет Задания */
+	.submenu-jobs__items{
+		width: 200px;
+	}
+	.submenu-jobs__link{
+		font-size: 15px;
+	}
+	/* Анкета для не авторизованных пользователей */
+
+	/* Создание анкеты  */
+	.bgc__createWorker{
+		background-color: initial;
+	}
+
+	.modal__window_select_jobs{
+		display: block;
+	}
+	.modal__window{
+		position: initial;
+		background-color: initial;
+	}
+
+
+	/* Конец Создание анкеты  */
+
+	/* Проверка заполнения анкеты  */
+	.bgc_check_worker_filling{
+		background-color: initial;
+	}
+	.bgc_check_worker_filling_pc{
+		background-color: rgba(255,116,0,0.2);
+		border: none;
+	}
+	/* Конец Проверка заполнения анкеты  */
+
+	/* Профиль */
+	/* Секция Отзывы */
+	.wrap_status_views{
+		margin: 0;
+	}
+	.name_section, .line_section{
+		display: block;
+	}
+	.review{
+		border: 1px solid #d0cece;
+		border-radius: 5px;
+		margin: 10px 0;
+		padding: 10px;
+	}
+	.name_section{
+		font-size: 16px;
+		font-weight: 500;
+		color: #7f7f7f;
+		margin-top: 11px;
+		margin-bottom: 5px;
+		margin-right: 22px;
+	}
+	.name_section__active{
+		color: #006363;
+		font-weight: 700;
+	}
+	.line_section{
+		width: 100%;
+		height: 2px;
+		background-color: #000;
+	}
+	.part_reviews_for_profile{
+		display: block;
+	}
+	/* Конец Секция Отзывы */
+	/* Конец Профиль */
+
+	/* Анкета для не авторизованных пользователей */
+
+	.worker-id{
+		display: block;
+		font-weight: 500;
+		color: #006363;
+		text-align: center;
+		font-size: 22px;
+		margin-top: 0;
+		margin-bottom: 24px;
+	}
+	.authorization_warning{
+		display: block;
+		margin-top: 10px;
+		font-size: 16px;
+	}
+	.wrap_name_section{
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+
+	}
+	.name_section{
+		cursor: pointer;
+	}
+	.show_parte{
+		display: block;
+	}
+	/* Конец Анкета для не авторизованных пользователей */
+
+	/* Поиск анкет */
+	.wrap_search_param{
+		padding: 12px 12px;
+	}
+	.search__input{
+		font-size: 16px;
+	}
+	.wrap_param{
+		display: flex;
+		justify-content: space-between;
+		margin-top: 10px;
+	}
+	.select_param{
+		width: 50%;
+	}
+	.select_param__property{
+		color: #fff;
+		font-size: 14px;
+	}
+	.select_param__value{
+		text-decoration: underline;
+	}
+	/* Конец Поиск анкет */
+
+    .part{
+        display: block;
+    }
+}
+
+ @media screen and (min-width: 1440px){
+	.menu__items{
+		width: 440px;
+	}
+	.menu__link{
+		font-size: 18px;
+	}
+	.loginReg__link{
+		font-size: 16px;
+	}
+	.c1reateBtn{
+		width: 24%;
+	}
+	.createBtn__btn{
+		font-size: 20px;
+	}
+	.personalAreaMenu__link{
+		font-size: 16px;
+		padding: 15px 0 15px 10px;
+		width: 150px;
+	}
+ }
+  @media screen and (min-width: 1921px) and (max-width: 3560px){
+  	.headerMain{
+  		max-width: 1920px;
+  		margin: 0 auto;
+  	}
+  }

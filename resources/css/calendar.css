@@ -1,0 +1,164 @@
+.calendar{
+    width: 222px;
+    background-color: white;
+    padding: 6px;
+}
+.calendar_top{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+.wrap_month_year{
+    margin: auto 0;
+}
+.calendar_arrow_btn{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    cursor: pointer;
+    color: #009999;
+}
+.calendar_arrow_btn__active{
+    color: #009999;
+}
+.calendar_arrow_btn__disable{
+    color: gray;
+}
+.wrap_month_year{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+}
+.calendar_month{
+    font-size: 15px;
+    color: #5b5b5b;
+}
+.calendar_year{
+    font-size: 15px;
+    margin-left: 6px;
+    color: #5b5b5b;
+}
+.calendar_days-of-the-week{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+}
+.calendar_day-of-the-week{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    color: #5b5b5b;
+}
+
+.calendar_numbers{
+    display: flex;
+    flex-wrap: wrap;
+}
+.calendar_number{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    color: #009999;
+    font-size: 14px;
+}
+.calendar_number:hover {
+    background-color: rgba(0,128,0,0.08);
+}
+.calendar_number__current_day{
+    background-color: green;
+    color: white;
+}
+.calendar_number__last_day{
+    color: rgba(0,0,0,0.3);
+}
+.calendar_number__weekend, .calendar_day-of-the-week__weekend{
+    color: red;
+}
+
+.calendar__active{
+    position: absolute;
+    top1: 48px;
+}
+
+
+
+
+
+@media screen and (min-width: 320px) {
+    .wrap_icon_input{
+        position: initial;
+    }
+
+    .wrap_period{
+
+    }
+    .wrap_date_time {
+        display: flex;
+    }
+
+    .date_time__title {
+        font-size: 14px;
+        color: #009999;
+        display: block;
+        margin-bottom: 4px;
+    }
+
+    .date_time {
+    }
+    .date_time_start{
+        margin-bottom: 10px;
+    }
+    .wrap_icon_input {
+        display: flex;
+        position: relative;
+    }
+    .wrap_time{
+        margin-left: 15px;
+    }
+
+    .bg_icon {
+        background-color: white;
+        width: 29px;
+        padding: 3px 5px;
+        border-right: 1px solid #cbcbcb;
+    }
+
+    .date_time__icon {
+        color: #009999;
+        font-size: 18px;
+        margin: 0;
+    }
+
+    .date_time__datepicker {
+        text-align: center;
+        color: #7a7c7c;
+        border: none;
+        font-size: 14px;
+        width: 86px;
+        padding: 3px 5px;
+    }
+
+    .date_time__time {
+        text-align: center;
+        color: #7a7c7c;
+        border: none;
+        font-size: 14px;
+        width: 54px;
+        padding: 3px 5px;
+    }
+
+    .date_time_finish {
+    }
+}

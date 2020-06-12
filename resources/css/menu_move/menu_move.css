@@ -1,0 +1,105 @@
+
+/* Выдвигающее меню */
+.moveMenu{
+    width: 100%;
+    position: fixed;
+    top: 0;
+}
+.moveMenu .loginReg-menu{
+    float: left;
+    height: 100vh;
+    width: 80%;
+}
+.moveMenu .overlay{
+    width: 20%;
+    height: 100vh;
+    background-color: #000;
+    float: right;
+}
+.moveMenu .loginReg{
+    height: 30%;
+    background-color: #009999;
+    padding: 6% 8%;
+}
+.login,.outin{
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.menu{
+    height: 70%;
+    background-color: #fff;
+    padding: 6% 8%;
+}
+.titleMenu{
+    text-align: center;
+    margin: 0 0 0.9em;
+}
+.menu__titleMenu{
+    font-size: 18px;
+    color: #006363;
+}
+.menu__items{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 55%;
+}
+.menu__link{
+    color: #009999;
+}
+.loginReg__items{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: space-between;
+}
+.menu__link,.loginReg__link{
+    font-size: 15px;
+}
+.loginReg__link{
+    color: white;
+}
+.loginReg__attention{
+    font-size: 14px;
+    color: white;
+}
+
+
+/*.removeMoveMenu{*/
+/*    display: none;*/
+/*}*/
+/*.addMoveMenu{*/
+/*    display: block;*/
+/*}*/
+
+
+
+
+.show_menu{
+    left: 0;
+    transition-property: left;
+    transition-duration: 0.3s;
+}
+.hide_menu{
+    left: -100%;
+    transition-property: left;
+    transition-duration: 0.3s;
+}
+.show_opacity{
+    opacity: 0.6;
+    transition-property: opacity;
+    transition-delay: 0.2s;
+    transition-duration: 0.4s;
+}
+.hide_opacity{
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: 0.4s;
+}

@@ -1,0 +1,6 @@
+.show_modal_window{
+    display: flex;
+}
+.hide_modal_window{
+    display: none;
+}

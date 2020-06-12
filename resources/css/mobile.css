@@ -1,0 +1,681 @@
+/* Мобильная версия */
+@media screen and (min-width: 320px){
+	/* Главная страница*/
+	.header-for-main-mobile{
+		padding: 0 10px;
+	}
+	.header-for-desktop,.slogan,.personalAreaMenu{
+		display: none;
+	}
+	 .header-for-main-mobile{
+		margin-bottom: 8px;
+	}
+	.header-main_mobile{
+		text-align: center;
+	}
+	.header-main_mobile .header__logo{
+		width: 42%;
+	}
+	.header-main_mobile .createBtn{
+		width: 100%;
+	}
+	.fa-bars {
+		position: absolute;
+		top: 10px;
+		left: 10px;
+		z-index: 0;
+		font-size: 34px;
+	}
+	.icon_green{
+		color: #009999;
+	}
+	.icon_white{
+		color: #fff;
+	}
+	.createBtn__btn{
+		width: 48.31%;
+		font-size: 14px;
+		border-radius: 3px;
+		padding: 0.9vw 0;
+	}
+	.section__title{
+		display: none;
+	}
+	.workers-jobs{
+		flex-direction: column;
+		align-items: center;
+	}
+	.workers, .jobs{
+		width: 100%;
+	}
+	.lineCenter{
+		display: none;
+	}
+	.cards{
+		margin-bottom: 15px;
+	}
+	.searchBtn{
+		width: 100%;
+		padding: 0.7vw 0;
+		margin-bottom: 15px;
+	}
+	.card{
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		padding-top: 7px;
+		margin-bottom: 7px;
+	}
+	.workers .data{
+		width: 82%;
+	}
+	.data {
+		width: 100%;
+	}
+	.topRow__name, .bottomRow__detailed{
+		font-size: 14px;
+	}
+	.topRow__rating{
+		font-size: 12px;
+	}
+	.topRow__price{
+		font-size: 12px;
+	}
+	.topRow__price span {
+		font-size: 14px;
+	}
+	.data__description{
+		font-size: 14px;
+	}
+	.bottomRow__create{
+		font-size: 12px;
+	}
+	.wrapAvatar{
+		width: 16%;
+	}
+	.wrapAvatar__avatar{
+		width: 44px;
+		height: 44px;
+	}
+
+	 /* Регистрация  страница */
+	.header-mobile{
+		background-color: #009999;
+		text-align: center;
+		position: relative;
+	}
+	.header-mobile__right-btn{
+		position: absolute;
+		top: 10px;
+		left: 10px;
+		font-size: 30px;
+	}
+	.header__title{
+		font-size: 16px;
+		font-weight: 400;
+		color: #fff;
+		padding: 15px 0;
+	}
+	.field{
+		margin-top: 10px;
+	}
+	.form__label{
+		margin-bottom: 5px;
+	}
+	.form__input{
+		width: 93.75%;
+		text-align: center;
+	}
+	.agreement{
+		display: none;
+	}
+	.form__input[type='submit']{
+		position: absolute;
+		left: 3.13%;
+		bottom: 3.13%;
+		font-size: 16px;
+	}
+	.form__input__link{
+		display: none;
+	}
+	/* Вход  страница */
+	footer {
+		display: none;
+	}
+	.form__RememberRestorePassword{
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		justify-content: center;
+	}
+	.remember{
+		display: none;
+	}
+	.restorePassword{
+		color: #009999;
+		border: none;
+		background-color: #fff;
+		font-size: 16px;
+		text-decoration: underline;
+		margin-top: 15px;
+	}
+	.showAthentication{
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+	}
+	.hideAuthentication{
+		display: none;
+	}
+
+
+	/* Личный кабинет */
+	.menu-personal-area-desktop{
+		display: none;
+	}
+	/* Подменю  Личный кабинет */
+	.submenu,.menu-personal-area-mobile{
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		justify-content: space-between;
+
+	}
+	.strelki-menu{
+		font-size: 28px;
+		color: #009999;
+	}
+	.submenu__items,.menu-personal-area-mobile__items{
+		width: 260px;
+		height: 31px;
+		overflow-x: hidden;
+		position: relative;
+	}
+	.submenu__link,.menu-personal-area-mobile__link {
+		position: absolute;
+		font-size: 14px;
+		font-weight: bold;
+		min-width: 100px;
+	}
+	.left{
+		left: -67px;
+		text-align: right;
+		color: #9d9d9d;
+		transition-property: left;
+		transition-duration: 0.3s
+	}
+	.center{
+		left: 81px;
+		color: #006362;
+		font-size: 16px;
+		text-align: center;
+		transition-property: left;
+		transition-duration: 0.3s;
+	}
+	.right {
+		left: 228px;
+		text-align: left;
+		color: #9d9d9d;
+		transition-property: left;
+		transition-duration: 0.3s
+	}
+	.width100{
+		width: 100px;
+		font-size: 14px;
+	}
+	.submenu__line{
+		height: 1px;
+		background-color: #000;
+	}
+		/* Личный кабинет Настройки*/
+    .workerStyle{
+    }
+	.submenu>.submenu__item,.workerStyle__name_surname_sex{
+		display: none;
+	}
+	.workerStyle__top{
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		justify-content: space-between;
+	}
+	.workerStyle__name_surname{
+		width: 74%;
+	}
+	.workerStyle__avatar{
+		width: 70px;
+		height: 70px;
+	}
+	.workerStyle .block{
+		margin-bottom: 15px;
+	}
+	.workerStyle__prop{
+		font-size: 15px;
+		color: #8f8f8f;
+	}
+	.workerStyle__val{
+		font-size: 16px;
+		color: #5b5b5b;
+	}
+	.workerStyle__line{
+		background-color: #009999;
+		color: #009999;
+		margin-bottom: 4px;
+	}
+	.workerStyle__val_yes{
+		font-weight: 700;
+		color: #009999;
+	}
+	.ask_answer{
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 18px;
+	}
+	.workerStyle__ask{
+		display: block;
+		width: 67%;
+		font-size: 14px;
+	}
+	.fa-pen{
+		color: #8e8c8c;
+        cursor: pointer;
+	}
+	.confirmed{
+		color: #009999;
+		font-size: 18px;
+	}
+	.confirm{
+		font-size: 14px;
+		color: red;
+		text-decoration: underline;
+	}
+	.block_edit{
+		position: relative;
+	}
+	.edit{
+		margin-left: 13px;
+	}
+	.workerStyle__val-wrap_edit{
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		justify-content: space-between;
+	}
+	.wrap_edit{
+		position: absolute;
+		right: 0;
+		margin-top: 10px;
+	}
+	.check_input{
+		position: absolute;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+	}
+	.checkbox{
+		display: block;
+		width: 50px;
+		height: 26px;
+		background-color: #8e8d8d;
+		border-radius: 20px;
+		padding-left: 2px;
+		padding-top: 3px;
+		position: relative;
+	}
+	.checkbox::after{
+		display: block;
+		content: "";
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		background-color: white;
+	}
+	.check_input:checked + .checkbox{
+		background-color: #009999;
+	}
+	.check_input:checked + .checkbox::after{
+		position: absolute;
+		right: 2px;
+	}
+	/* Личный кабинет Моя анкета */
+	.modal__window{
+		position: absolute;
+		top: 0;
+		left:0;
+		background-color: white;
+		z-index: 0;
+		width: 100%;
+	}
+	.show__modal__window{
+		display: block;
+	}
+	.items_categories{
+		padding: 0 10px;
+	}
+	.item_category_jobs{
+		font-size: 16px;
+		font-weight: 700;
+		color: #006363;
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+	.item_job{
+		font-weight: initial;
+		color: #686666;
+		margin-left: 20px;
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+	.wrap__avatar{
+		display: flex;
+		align-items: center;
+	}
+	/* Личный кабинет Задания*/
+	.submenu-jobs__items{
+		display: flex;
+		justify-content: space-between;
+	}
+	.submenu-jobs__link{
+		display: block;
+		font-size: 14px;
+		font-weight: 500;
+		color: #009999;
+		background-color: #fff;
+		width: 145px;
+		padding: 3px 0;
+		text-align: center;
+		border-radius: 3px;
+	}
+	.submenu-jobs__link_active{
+		border-top: 2px solid #009999;
+		border-bottom: 2px solid #009999;
+		background-color: rgba(0,0,0,0.07);
+	}
+	.status-seclection{
+		margin: 11px 0;
+	}
+	.status-seclection__title{
+		font-size: 12px;
+		font-weight: 700;
+		color: #8e8e8e;
+	}
+	.status-seclection__item{
+		font-size: 14px;
+		color: #006363;
+	}
+	/* Конец Личный кабинет Задания*/
+
+	/* Создание анкеты  */
+	.bgc__createWorker{
+		background-color: rgba(0,0,0,0.06);
+	}
+    .workerStyle{
+        padding: 10px;
+    }
+	.workerStyle__inputText,textarea{
+		width: 100%;
+		border: none;
+		font-size: 15px;
+		padding: 3px 5px;
+		color: #555656;
+	}
+	.workerStyle__selectItems{
+		display: flex;
+		justify-content: space-between;
+		width: 230px;
+	}
+	.workerStyle__titleFieLd{
+		font-size: 13px;
+		font-weight: 700;
+		color: #009999;
+	}
+	select {
+		font-size: 15px;
+		padding: 3px 5px;
+		border: none;
+		color: #555656;
+	}
+	.workerStyle__sex_items{
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+	}
+	.workerStyle__sex_item{
+		margin-right: 18px;
+	}
+	.workerStyle__label{
+		color: #8f8f8f;
+		font-size: 15px;
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		align-items: center;
+	}
+	.workerStyle__label:before{
+		margin-right: 6px;
+	}
+	.workerStyle__inputRadio[type="radio"]{
+		visibility: hidden;
+		position: absolute;
+	}
+	.workerStyle__inputRadio[type="radio"]:not(:checked) + .workerStyle__label::before{
+		background-image: url("../images/radio_no.png");
+		-webkit-background-size: cover;
+		background-size: cover;
+		width: 18px;
+		height: 18px;
+		content: "";
+	}
+	.workerStyle__inputRadio[type="radio"]:checked + .workerStyle__label::before{
+		background-image: url("../images/radio_yes.png");
+		-webkit-background-size: cover;
+		background-size: cover;
+		width: 18px;
+		height: 18px;
+		content: "";
+	}
+	.btn_for_selected{
+		font-size: 15px;
+		color: #099999;
+		text-decoration: underline;
+        cursor: pointer;
+	}
+	/* Конец Создание анкеты  */
+
+	/* Проверка заполнения анкеты  */
+	.bgc_check_worker_filling{
+		background-color: rgba(255,116,0,0.2);
+	}
+	/* Конец Проверка заполнения анкеты  */
+
+	/* Профиль */
+	.wrap_status_views{
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		justify-content: space-between;
+		margin: 5px 0;
+	}
+	.status_online{
+		font-size: 14px;
+		font-weight: 500;
+		color: #099999;
+	}
+	.views_icon{
+		font-size: 14px;
+		color: #747473;
+	}
+	.views_number{
+		font-size: 14px;
+		color: #747473;
+	}
+	.part{
+		display: none;
+	}
+	.show_part{
+		display: block;
+	}
+
+	.part__warning_text{
+		color: #767676;
+		margin-top: 5px;
+		font-size: 14px;
+		display: block;
+	}
+	/* Секция Отзывы */
+	.name_section, .line_section{
+		display: none;
+	}
+	.wrap_reviews{
+		background-color: #fff;
+	}
+	.review{
+		border-bottom: 1px solid #d0cece;
+		border-radius: 5px;
+		padding-bottom: 10px;
+		margin-bottom: 10px;
+	}
+	.wrap_avatar_name_type{
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		align-items: center;
+	}
+	.review__avatar_reviewer{
+		background-image: url('../images/photo888.png');
+		-webkit-background-size: cover;
+		background-size: cover;
+		width: 50px;
+		height: 50px;
+	}
+	.review__name_reviewer{
+		color: #006363;
+		margin-left: 10px;
+		margin-right: 22px;
+	}
+	.review__type_user{
+		color: #8f8f8f;
+	}
+	.wrap_name_title_job{
+		margin: 11px 0;
+	}
+	.review__name_section{
+		font-weight: 500;
+		color: #006363;
+	}
+	.review__title_job{
+		color: #099999;
+	}
+	.review__text{
+		color: #555656;
+		display: inline;
+	}
+	.wrap_stars_pubdate{
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		justify-content: space-between;
+		margin-top: 11px;
+	}
+	.fa-stars{
+		display: inline;
+	}
+	.fa-star{
+		color: #ffe241;
+	}
+	.review__pubdate{
+		font-size: 14px;
+		color: #8f8f8f;
+	}
+	/* Конец Секция Отзывы */
+	/* Конец Профиль */
+
+	/* Анкета для не авторизованных пользователей */
+	.worker-id{
+		display: none;
+	}
+	.authorization_warning{
+		color: #a9a8a8;
+		font-size: 14px;
+		font-weight: 500;
+	}
+
+	.wrap_name_section{
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+	}
+	/* Конец Анкета для не авторизованных пользователей */
+
+
+	/* Анкета для авторизованных пользователей */
+	/* Конец Анкета для авторизованных пользователей */
+
+
+	/* Поиск анкет */
+	.wrap_search_param{
+		background-color: #099999;
+		padding: 10px 8px;
+		margin-top: 8px;
+		margin-bottom: 12px;
+		border-radius: 3px;
+	}
+	.search{
+		display: flex;
+		width: 100%;
+	}
+	.search__input{
+		width: 100%;
+		font-size: 14px;
+		padding: 3px 5px;
+		font-weight: 500;
+	}
+	.search__btn{
+		padding: 3px 10px;
+		color: #fff;
+		background-color: #ff7400;
+		border: none;
+	}
+	.wrap_param{
+		display: none;
+	}
+
+	/* Конец Поиск анкет */
+
+}
+
+
+@media screen and (min-width: 568px){
+	.header__logo{
+		width: 26%;
+	}
+}

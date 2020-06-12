@@ -1,0 +1,45 @@
+.bgc__createWorker__pc{
+    border: none;
+    background-color: rgba(0,0,0,0.06);
+}
+
+.modal_window{
+    max-width: 300px; border:1px #009999 solid;position: absolute;background-color: white;
+}
+.wrap_title{
+    background-color: #009999;
+}
+.popup_title{
+    color: #fff;padding: 5px; font-size: 15px;
+}
+.form_btn{
+    padding: 15px;
+}
+.form_btn form{
+    margin: 10px 0 24px;
+}
+.wrap_input_label label{
+    color:#006363;font-size: 14px;
+}
+.wrap_input_label input{
+    border: 1px #009999 solid;width: 100%;padding:3px 5px;
+    font-size:16px;
+}
+.popup_buttons{
+    display:flex;justify-content: space-between;
+}
+.popup_buttons button{
+    background-color:#009999;color:#fff;width: 35%; padding: 3px 0;font-size: 16px;border: none;
+}
+.hide_popup_edit{
+    display: none;
+}
+.er111rors{
+    display: none;
+}
+.show {
+    display: flex;
+}
+.hide {
+    display: none;
+}

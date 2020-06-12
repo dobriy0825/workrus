@@ -1,0 +1,23 @@
+.switcher{
+    border-radius:3px;
+    border: 1px #009999 solid;
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.active_input{
+    background-color: #009999;
+    color: #ffffff;
+}
+.hide_input{
+    color: #b0afaf;
+}
+.switch_item{
+    width: 150px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 700;
+    padding:3px 0;
+    cursor: pointer;
+}

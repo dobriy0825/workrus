@@ -1,0 +1,347 @@
+.modal__window{
+
+}
+.select_value__list_item {
+    font-size: 16px;
+    color: #555656;
+    padding: 12px;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: space-between;
+}
+    .item_selection_popup{
+
+    }
+@media screen and (min-width: 320px) {
+    /* Модальное окно "Выбор города */
+    .item_selection_popup{
+        display:none;
+        position:fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color:rgba(0,0,0,0.5);
+    }
+    .item_selection_popup .modal__window{
+        width: 100%;
+        height: 100vh;
+        background-color: #fff;
+    }
+    .wrap_title_icon_close {
+        display: none;
+    }
+    .select_value__title {
+        display: none;
+    }
+
+    .wrap_select_value__search {
+        display: flex;
+        background-color: #009999;
+    }
+    .select_value__search {
+        font-size: 16px;
+        padding: 3px 8px;
+        margin: 10.5px auto;
+        border-radius: 3px;
+    }
+    .select_value__btn_back{
+        font-size: 30px;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+    .select_value__icon_close{
+        display: none;
+    }
+
+    .lists_column{
+
+    }
+    .wrap_title_list{
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+    }
+    .select_value__list{
+        overflow-y: auto;
+        height: 100%;
+    }
+    .wrap_title_sublist{
+        display: none;
+    }
+
+}
+@media screen and (min-width: 1025px){
+    .item_selection_popup{
+        justify-content: center;
+        align-items: center;
+    }
+    .item_selection_popup .modal__window{
+        border-radius: 10px;
+        width:555px;
+        height: 755px;
+        padding: 22px;
+    }
+    .wrap_title_icon_close {
+        display: flex;
+        justify-content: space-between;
+    }
+    .wrap_select_value__search {
+        background-color: initial;
+    }
+    .select_value__search {
+        display: block;
+        font-size: 16px;
+        padding: 5px 10px;
+        border: 1px solid #099999;
+        border-radius: 3px;
+        width: 100%;
+        margin: 10px 0 20px;
+    }
+    .select_value__btn_back{
+        display: none;
+    }
+    .select_value__icon_close {
+        display: block;
+        color: #009999;
+        font-size: 24px;
+        cursor: pointer;
+    }
+    .lists_column {
+        display: flex;
+        position: static;
+    }
+    .wrap_title_list{
+        position: initial;
+        width: 50%;
+        height: 600px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .select_value__title {
+        display: block;
+        font-size: 20px;
+        font-weight: 500;
+        color: #009999;
+        margin-bottom: 10px;
+    }
+    .select_value__list {
+        border-left: 1px solid #c1bebe;
+        overflow-y: auto;
+        width: 100%;
+        position: initial;
+    }
+    .select_value__list_item:hover {
+        color: #ff7400;
+    }
+    .select_value__list_item_active {
+        background-color: rgba(255, 116, 0, 0.19);
+        color: #ff7400;
+    }
+    /*.select_value__list_item_active:before {*/
+    /*    content: "";*/
+    /*    width: 4px;*/
+    /*    height: 100%;*/
+    /*    background-color: #ff7400;*/
+    /*    position: absolute;*/
+    /*    left: 0;*/
+    /*    top: 0;*/
+    /*}*/
+}
+
+
+
+
+
+
+
+
+/*    .wrap_title_list_city {*/
+/*        position: absolute;*/
+/*        top: 0;*/
+/*        background-color: #fff;*/
+/*        width: 100%;*/
+/*        display: none;*/
+/*    }*/
+
+/*    .wrap_title_list_city-show {*/
+/*        display: initial;*/
+/*    }*/
+
+/*    .wrap_title_list_region {*/
+/*    }*/
+
+
+
+/*    .select_value__icon_right {*/
+/*        font-size: 18px;*/
+/*        color: #555656;*/
+/*    }*/
+/*}*/
+/*!* Конец Модальное окно "Выбор item *!*/
+
+
+
+
+/*@media screen and (min-width: 1025px) {*/
+/*    !* Модальное окно "Выбор города *!*/
+/*    .select_value {*/
+/*        padding: 20px;*/
+/*        width: 538px;*/
+/*        background-color: #fff;*/
+/*        border-radius: 5px;*/
+/*        margin: 0 auto;*/
+/*    }*/
+
+/*    .wrap_title_icon_close {*/
+/*        display: flex;*/
+/*        justify-content: space-between;*/
+/*    }*/
+
+
+
+
+
+/*    .wrap_select_value__search {*/
+/*        background-color: initial;*/
+/*    }*/
+
+
+/*    .lists_colum {*/
+/*        display: flex;*/
+/*    }*/
+
+/*    .wrap_title_list {*/
+/*        width: 250px;*/
+/*    }*/
+
+/*    .select_value__title {*/
+/*        font-size: 18px;*/
+/*        color: #009999;*/
+/*        text-align: center;*/
+/*        display: block;*/
+/*        margin-bottom: 10px;*/
+/*    }*/
+
+/*    .wrap_title_list_city {*/
+/*        position: initial;*/
+/*        display: initial;*/
+/*    }*/
+
+
+
+/*    .select_value__list_item {*/
+/*        position: relative;*/
+/*        cursor: pointer;*/
+/*    }*/
+
+
+
+
+/*    !* Конец Модальное окно "Выбор города *!*/
+/*}*/
+
+
+/*--------------------------------------------*/
+/* Модальное окно "Выбор тип работ"*/
+/* Общие стили */
+.typeJob__item__title{
+    color: #ffff;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.typeJob__item__title__green{
+    color: #006362;
+}
+.typeJob__item__subItems{
+    display: none;
+}
+.typeJob__item__subItem{
+    font-size: 14px;
+    color: #555656;
+    margin: 12px 0;
+}
+.typeJob__item__icon{
+    font-size: 20px;
+}
+.typeJob__item__icon__up{
+    transform: rotateZ(180deg);
+}
+.typeJob__item__subItem__label{
+    margin-right: 10px;
+    font-size: 15px;
+    color: #555656;
+    font-weight: 400;
+    cursor: pointer;
+}
+.typeJob__item__subItem__label:before{
+    margin-right: 11px;
+}
+.typeJob__item__subItem__input[type="checkbox"]{
+    visibility: hidden;
+    position: absolute;
+}
+.typeJob__item__subItem__input[type="checkbox"]:not(:checked) + .typeJob__item__subItem__label:before{
+    content: url("../../images/n.png");
+}
+.typeJob__item__subItem__input[type="checkbox"]:checked + .typeJob__item__subItem__label:before{
+    content: url("../../images/y.png");
+}
+
+
+@media screen and (min-width: 320px){
+
+    .jobs_selection_popup{
+        display: none;
+    }
+    .typeJob__item{
+        background-color: #009999;
+        font-size: 15px;
+        margin: 10px;
+        padding: 10px;
+        border-radius: 3px
+    }
+    .typeJob__item__show{
+        background-color: rgba(255,116,0,0.1);
+        font-weight: 700;
+    }
+    /* Конец Модальное окно "Выбор тип работ"*/
+}
+
+
+
+@media screen and (min-width: 1025px){
+    .jobs_selection_popup{
+        display: block;
+    }
+    .header-for-mobile{
+        display: none;
+    }
+    .typeJob__item{
+        margin: 10px 0;
+    }
+    /* Конец Модальное окно "Выбор тип работ"*/
+}
+
+
+/*--------------------*/
+@media screen and (min-width: 320px){
+    .types_of_jobs_popup{
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+}
+@media screen and (min-width: 1025px){
+    .types_of_jobs_popup{
+        position: initial;
+    }
+}
