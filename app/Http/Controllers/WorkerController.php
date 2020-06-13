@@ -194,6 +194,7 @@ class WorkerController extends Controller
 
     public function show($id)
     {
+        //dd(1);
         $worker = Worker::find($id);
         //dd($worker->categories);
         $user = $worker->user->first();
@@ -209,7 +210,7 @@ class WorkerController extends Controller
             $subCategories[] = ['id' => $item->id, 'name' => $item->name, 'category_id' => $item->category_id];
         }
         $worker->addView($worker);
-        return view('worker.item', compact('user','worker', 'categories', 'subCategories'));
+        return view('worker.item', compact('user', 'worker', 'categories', 'subCategories'));
     }
 
     public function index()
