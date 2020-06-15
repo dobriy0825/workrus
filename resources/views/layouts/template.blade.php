@@ -13,12 +13,10 @@
 </head>
 
 <body>
-<div id="app">
 
 
 @yield('header')
 @yield('content')
-</div>
 <script src="{{ mix('js/all.js') }}"></script>
 <script src="{{ mix('js/app.js') }}"></script>
 

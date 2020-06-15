@@ -219,16 +219,11 @@ class WorkerController extends Controller
         return view('worker.index', compact('workers'));
     }
 
-    public function getOpenJobs()
+    public function getAuthenticatedUserJobs()
     {
         $user = Auth::user();
         $jobs = $user->jobs()->statusOpen()->get();
         return $jobs;
-    }
-
-    public function getProposedJobs()
-    {
-        return 4;
     }
 
     public function proposedJob(Request $request)
@@ -237,6 +232,25 @@ class WorkerController extends Controller
         $worker->proposedJobs()->attach($request->job_id);
         return 1;
     }
+
+    public function getProposedJobs(Request $request)
+    {
+        $worker = Worker::find($request->worker_id);
+        return $worker->proposedJobs;
+    }
+
+    public function hiredJobs(){
+
+    }
+
+    public function getHiredJob()
+    {
+
+    }
+
+
+
+
 
 
 }

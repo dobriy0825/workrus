@@ -1,15 +1,16 @@
 <template>
     <div>
-        <div class="card">
+        <div class="card"
+             v-for="job in proposedJob">
             <div class="data">
                 <div class="data__topRow">
-                    <a href="" class="topRow__name">Убрать 1 комнатную квартиру</a>
-                    <p class="topRow__price">цена: <span>20000</span>р.</p>
+                    <a href="" class="topRow__name">{{ job.title }}</a>
+                    <p class="topRow__price">цена: <span>{{ job.price }}</span>р.</p>
                 </div>
-                <p class="data__description">Lorem ipsum dolor sit amet, consectetur ad...</p>
+                <p class="data__description">{{ job.description }}</p>
                 <div class="data__bottomRow">
-                    <p class="bottomRow__create">создание: 20.05.2019 17:35</p>
-                    <a href="" class="bottomRow__detailed">Подробнее</a>
+                    <p class="bottomRow__create">создание: {{ job.created_at }}</p>
+                    <a :href="'/job/' + job.id" class="bottomRow__detailed">Подробнее</a>
                 </div>
             </div>
         </div>
@@ -24,15 +25,15 @@
     export default {
         data(){
             return {
-                jobs: [],
-                job: {
-                    id: '',
-                    title: '',
-                    price: '',
-                    description: '',
-                    created_at: ''
-                }
             }
+        },
+        computed: {
+            proposedJob(){
+                return this.$store.getters.getProposedJob;
+            }
+        },
+        mounted() {
+
         }
     }
 </script>

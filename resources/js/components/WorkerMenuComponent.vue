@@ -7,6 +7,14 @@
             <span class="name_section" data-content="part_reviews">Отзывы (0)</span>
         </div>
         <div class="line_section" style="margin-bottom: 10px;"></div>
+
+        <div class="part  show_parte tab">
+            <div class="cards">
+                <job-component></job-component>
+            </div>
+
+        </div>
+
     </div>
 </template>
 

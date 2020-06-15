@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <worker-menu-component></worker-menu-component>
+    <div class="container">
+        {{ message }}
     </div>
 </template>
 
@@ -8,9 +8,8 @@
     export default {
         data(){
             return {
+                message: "Это тестовый компонент!"
             }
-        },
-        methods: {
-        },
+        }
     }
 </script>
