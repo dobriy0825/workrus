@@ -28,6 +28,10 @@ Vue.component('worker-component', require('./components/WorkerComponent.vue').de
 Vue.component('worker-menu-component', require('./components/WorkerMenuComponent.vue').default);
 Vue.component('job-component', require('./components/JobComponent.vue').default);
 Vue.component('proposed-job-btn', require('./components/ProposedJobBtn').default);
+Vue.component('popup-selection-job-component', require('./components/PopupSelectionJobComponent.vue').default);
+Vue.component('card-list-component', require('./components/CardListComponent').default);
+Vue.component('review-component', require('./components/ReviewComponent').default);
+Vue.component('not-jobs-component', require('./components/popups/NotJobsComponent').default);
 Vue.component('test-component', require('./components/TestComponent').default);
 
 /**

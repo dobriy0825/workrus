@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CreateWorkerRequest;
 use App\Models\Address\City;
 use App\Models\Address\Region;
+use App\Models\Job;
 use App\Models\SubCategory;
 use App\Models\Category;
 use App\Models\Worker;
@@ -233,19 +234,26 @@ class WorkerController extends Controller
         return 1;
     }
 
-    public function getProposedJobs(Request $request)
+    public function getProposedJobs($worker_id)
     {
-        $worker = Worker::find($request->worker_id);
-        return $worker->proposedJobs;
+        $data = [];
+        $jobs = Worker::find($worker_id)->proposedJobs;
+        return $jobs;
     }
 
     public function hiredJobs(){
 
     }
 
-    public function getHiredJob()
+    public function getHiredJobs($worker_id)
     {
+        $jobs = Worker::find($worker_id)->hiredJobs;
+        return $jobs;
+    }
 
+    public function getReviews($worker_id){
+        $reviews = Worker::find($worker_id)->reviews;
+        return $reviews;
     }
 
 

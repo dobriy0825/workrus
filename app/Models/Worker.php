@@ -60,7 +60,7 @@ class Worker extends Model
 
     public function reviews()
     {
-        return $this->hasMany(Review::class, 'whom');
+        return $this->hasMany(Review::class, 'whom')->with('job');
     }
 
     public function completedJobs()
@@ -71,5 +71,9 @@ class Worker extends Model
     public function proposedJobs()
     {
         return $this->belongsToMany(Job::class, 'proposed_tasks', 'worker_id', 'job_id');
+    }
+
+    public function hiredJobs(){
+        return $this->belongsToMany(Job::class, 'hired_jobs', 'worker_id', 'job_id');
     }
 }

@@ -1,6 +1,7 @@
 {
     "/js/all.js": "/js/all.js",
     "/js/app.js": "/js/app.js",
+    "/js/job/item_job.js": "/js/job/item_job.js",
     "/js/login.js": "/js/login.js",
     "/js/main.js": "/js/main.js",
     "/js/worker/item_worker.js": "/js/worker/item_worker.js",

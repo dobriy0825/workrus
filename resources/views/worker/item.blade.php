@@ -144,10 +144,14 @@
                     <span class="authorization_warning">Предложить своё Задание могут только авторизованные пользователи !</span>
                 @endguest
             </div>
-
-                <worker-component></worker-component>
+            @auth()
+                <worker-component v-bind:authenticated-user="{{ Auth::user() }}"
+                                  v-bind:worker="{{ $worker }}"></worker-component>
+                <popup-selection-job-component></popup-selection-job-component>
+                @endauth
         </div>
     </section>
+
 
 {{--    <script src="{{ mix('js/worker/item_worker.js') }}"></script>--}}
 @endsection

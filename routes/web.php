@@ -67,8 +67,10 @@ Route::post('/worker/create/edit', 'WorkerController@editAtCreation')->name('wor
 Route::get('/worker/{id}', 'WorkerController@show')->name('worker.item');
 Route::get('/workers', 'WorkerController@index')->name('worker.index');
 Route::get('/get_open_jobs', 'WorkerController@getAuthenticatedUserJobs');
-Route::post('/get_proposed_jobs', 'WorkerController@getProposedJobs');
+Route::get('/get_proposed_jobs/{worker_id}', 'WorkerController@getProposedJobs');
+Route::get('/get_hired_jobs/{worker_id}', 'WorkerController@getHiredJobs');
 Route::post('proposed_job', 'WorkerController@proposedJob');
+Route::get('/get_reviews/{worker_id}', 'WorkerController@getReviews');
 //----------------------------------------------------------------------------------------------------------------------
 Route::get('/job/create', 'JobController@create')->name('job.create');
 Route::post('/job/create/store', 'JobController@store')->name('job.store');
