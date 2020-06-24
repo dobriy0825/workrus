@@ -1965,7 +1965,11 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {};
   },
-  methods: {},
+  methods: {
+    hiredJobs: function hiredJobs(id) {
+      this.$store.dispatch('hiredJobs', id);
+    }
+  },
   computed: {
     activeTab: function activeTab() {
       return this.$store.getters.getActiveTab;
@@ -2153,7 +2157,6 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     this.$store.dispatch('addAuthenticatedUser', this.authenticatedUser);
     this.$store.dispatch('addWorker', this.worker);
-    this.$store.dispatch(this.$store.getters.getActiveTab);
   }
 });
 
@@ -2187,21 +2190,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       user: this.$store.getters.getAuthenticatedUser,
       worker: this.$store.getters.getWorker,
       type: '',
-      menuList: this.$store.getters.getMenu,
-      isActive: false
+      activeMenu: ''
     };
   },
   methods: {
-    showTab: function showTab(value) {
+    showMenu: function showMenu(value) {
       var res = this.user.id === this.worker.user_id;
 
       if (value === 'auth' === res) {
@@ -2212,23 +2211,22 @@ __webpack_require__.r(__webpack_exports__);
         return 'all';
       }
     },
-    addData: function addData(content) {
-      this.type = content;
-      this.$store.dispatch(content);
-    },
-    setActiveTab: function setActiveTab(content) {
-      if (content !== this.activeTab) {
-        this.$store.dispatch('addActiveTab', content);
-        console.log(content);
-        this.addData(content);
-        this.isActive = true;
+    defaultActiveMenu: function defaultActiveMenu() {
+      var content;
+
+      if (this.user.id === this.worker.id) {
+        content = 'addProposedJobs';
+      } else {
+        content = 'addMyProposedJob';
       }
+
+      return content;
     },
-    setActive: function setActive() {}
+    setActiveMenu: function setActiveMenu() {}
   },
   computed: {
-    activeTab: function activeTab() {
-      return this.$store.getters.getActiveTab;
+    menuList: function menuList() {
+      return this.$store.getters['menu/items'];
     },
     datas: function datas() {
       if (this.activeTab === 'addProposedJobs') {
@@ -2237,10 +2235,13 @@ __webpack_require__.r(__webpack_exports__);
         return this.$store.getters.getHiredJobs;
       } else if (this.activeTab === 'addReviews') {
         return this.$store.getters.getReviews;
-      } else if (this.activeTab === 'addProposed') {
-        return this.$store.getters.getProposed;
+      } else if (this.activeTab === 'addMyProposedJob') {
+        return this.$store.getters.getMyProposedJob;
       }
     }
+  },
+  created: function created() {
+    this.activeMenu = this.defaultActiveMenu;
   }
 });
 
@@ -37900,7 +37901,19 @@ var render = function() {
                 }
               ]
             },
-            [_c("button", [_vm._v("Принять задание")])]
+            [
+              _c(
+                "button",
+                {
+                  on: {
+                    click: function($event) {
+                      return _vm.hiredJobs(job.id)
+                    }
+                  }
+                },
+                [_vm._v("Принять задание")]
+              )
+            ]
           )
         ])
       }),
@@ -38152,19 +38165,16 @@ var render = function() {
       "div",
       { staticClass: "wrap_name_section" },
       _vm._l(_vm.menuList, function(item, index) {
-        return _vm.showTab(item.authenticatedUserWorker)
+        return _vm.showMenu(item.authenticatedUserWorker)
           ? _c(
               "span",
               {
                 key: index,
                 staticClass: "name_section",
-                class: { name_section__active: _vm.activeTab === item.content },
-                attrs: { type: item.content },
-                on: {
-                  click: function($event) {
-                    return _vm.setActiveTab(item.content)
-                  }
-                }
+                class: {
+                  name_section__active: item.content === _vm.activeMenu
+                },
+                attrs: { type: item.content }
               },
               [_vm._v(_vm._s(item.value))]
             )
@@ -38178,16 +38188,7 @@ var render = function() {
       staticStyle: { "margin-bottom": "10px" }
     }),
     _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "cards" },
-      [
-        _vm.activeTab === "addReviews"
-          ? _c("review-component", { attrs: { reviews: _vm.datas } })
-          : _c("job-component", { attrs: { jobs: _vm.datas } })
-      ],
-      1
-    )
+    _c("div", { staticClass: "cards" })
   ])
 }
 var staticRenderFns = []
@@ -52241,37 +52242,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _modules_job__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/job */ "./resources/js/store/modules/job.js");
+/* harmony import */ var _modules_menu__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/menu */ "./resources/js/store/modules/menu.js");
 
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__["default"]);
+
+
 var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
+  modules: {
+    menu: _modules_menu__WEBPACK_IMPORTED_MODULE_3__["default"]
+  },
   state: {
-    menu: [{
-      value: 'Предложенные задания',
-      authenticatedUserWorker: 'auth',
-      content: 'addProposedJobs'
-    }, {
-      value: 'Принятые задания',
-      authenticatedUserWorker: 'auth',
-      content: 'addHiredJobs'
-    }, {
-      value: 'Ваше задание',
-      authenticatedUserWorker: 'not auth',
-      content: 'addProposed'
-    }, {
-      value: 'Отзывы',
-      authenticatedUserWorker: 'all',
-      content: 'addReviews'
-    }],
-    activeTab: 'addProposedJobs',
-    count: 0,
     authenticatedUser: {},
     authenticatedUserJobs: [],
     proposedJob: [],
     worker: '',
     hiredJobs: [],
     proposedJobs: [],
-    reviews: []
+    reviews: [],
+    myProposedJob: []
   },
   getters: {
     count: function count(state) {
@@ -52289,12 +52279,6 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
     getWorker: function getWorker(state) {
       return state.worker;
     },
-    getMenu: function getMenu(state) {
-      return state.menu;
-    },
-    getActiveTab: function getActiveTab(state) {
-      return state.activeTab;
-    },
     getProposedJobs: function getProposedJobs(state) {
       return state.proposedJobs;
     },
@@ -52303,6 +52287,9 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
     },
     getReviews: function getReviews(state) {
       return state.reviews;
+    },
+    getMyProposedJob: function getMyProposedJob(state) {
+      return state.myProposedJob;
     }
   },
   mutations: {
@@ -52326,7 +52313,7 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
             state.authenticatedUserJobs = jobs;
           }
         } else {
-          state.authenticatedUserJobs = [];
+          throw new Error('У Вас нет доступных заданий');
         }
       }).then(function (id) {
         var form = new FormData();
@@ -52387,6 +52374,24 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
         state.hiredJobs = jobs;
       });
     },
+    hiredJobs: function hiredJobs(state, id) {
+      var form = new FormData();
+      form.append('job_id', id);
+      form.append('worker_id', window.location.pathname.split('/')[2]);
+      fetch('/hired_jobs', {
+        method: 'post',
+        body: form,
+        headers: {
+          'X-CSRF-TOKEN': document.querySelector('meta[name=csrf-token]').getAttribute('content')
+        }
+      }).then(function (response) {
+        var status = response.status;
+
+        if (status !== 200) {
+          throw new Error('error');
+        }
+      });
+    },
     addReviews: function addReviews(state) {
       var url = '/get_reviews/' + this.getters.getWorker.id;
       fetch(url).then(function (response) {
@@ -52415,8 +52420,12 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
         state.proposedJobs = jobs;
       });
     },
-    addActiveTab: function addActiveTab(state, value) {
-      state.activeTab = value;
+    addMyProposedJob: function addMyProposedJob(state) {
+      state.proposedJobs.forEach(function (item) {
+        if (item.user_id === this.authenticatedUser.id) {
+          state.myProposedJob = item;
+        }
+      });
     }
   },
   actions: {
@@ -52436,9 +52445,81 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
     addHiredJobs: function addHiredJobs(store) {
       store.commit('addHiredJobs');
     },
+    hiredJobs: function hiredJobs(store, id) {
+      store.commit('hiredJobs', id);
+    },
     addReviews: function addReviews(store) {
       store.commit('addReviews');
     },
+    addMyProposedJob: function addMyProposedJob(store) {
+      store.commit('addMyProposedJob');
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/store/modules/job.js":
+/*!*******************************************!*\
+  !*** ./resources/js/store/modules/job.js ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  state: {
+    joo: []
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/store/modules/menu.js":
+/*!********************************************!*\
+  !*** ./resources/js/store/modules/menu.js ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  namespaced: true,
+  state: {
+    menu: [{
+      value: 'Предложенные задания',
+      authenticatedUserWorker: 'auth',
+      content: 'addProposedJobs'
+    }, {
+      value: 'Принятые задания',
+      authenticatedUserWorker: 'auth',
+      content: 'addHiredJobs'
+    }, {
+      value: 'Ваше задание',
+      authenticatedUserWorker: 'not auth',
+      content: 'addMyProposedJob'
+    }, {
+      value: 'Отзывы',
+      authenticatedUserWorker: 'all',
+      content: 'addReviews'
+    }]
+  },
+  getters: {
+    items: function items(state) {
+      return state.menu;
+    },
+    getActiveTab: function getActiveTab(state) {
+      return state.activeTab;
+    }
+  },
+  mutations: {
+    addActiveTab: function addActiveTab(state, value) {
+      state.activeTab = value;
+    }
+  },
+  actions: {
     addActiveTab: function addActiveTab(store, value) {
       store.commit('addActiveTab', value);
     }

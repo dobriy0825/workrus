@@ -4,18 +4,15 @@
             <span class="name_section"
                   v-for="(item, index) in menuList"
                   v-bind:key="index"
-                  v-if="showTab(item.authenticatedUserWorker)"
+                  v-if="showMenu(item.authenticatedUserWorker)"
                   v-bind:type="item.content"
-                  v-on:click="setActiveTab(item.content)"
-                  v-bind:class="{name_section__active: activeTab === item.content}"
+                  v-bind:class="{name_section__active: item.content === activeMenu}"
             >{{ item.value }}</span>
         </div>
         <div class="line_section" style="margin-bottom: 10px;"></div>
+
+
         <div class="cards">
-            <review-component v-if="activeTab === 'addReviews'"
-                              v-bind:reviews="datas"></review-component>
-            <job-component v-else
-                           v-bind:jobs="datas"></job-component>
         </div>
     </div>
 </template>
@@ -27,12 +24,12 @@
                 user: this.$store.getters.getAuthenticatedUser,
                 worker: this.$store.getters.getWorker,
                 type: '',
-                menuList: this.$store.getters.getMenu,
-                isActive: false
+
+                activeMenu: ''
             }
         },
         methods: {
-            showTab(value){
+            showMenu(value){
                 let res = this.user.id === this.worker.user_id;
                 if ((value === 'auth') === res){
                     return true
@@ -42,25 +39,24 @@
                     return 'all'
                 }
             },
-            addData(content){
-                this.type = content;
-                this.$store.dispatch(content);
-            },
-            setActiveTab(content){
-                if (content !== this.activeTab){
-                    this.$store.dispatch('addActiveTab', content);
-                    console.log(content);
-                    this.addData(content);
-                    this.isActive = true;
+            defaultActiveMenu(){
+                let content;
+                if (this.user.id === this.worker.id){
+                    content = 'addProposedJobs';
+
+                }else {
+                    content = 'addMyProposedJob';
                 }
+                return content;
             },
-            setActive(){
+            setActiveMenu(){
 
             }
+
         },
         computed: {
-            activeTab(){
-                return this.$store.getters.getActiveTab
+            menuList() {
+                return this.$store.getters['menu/items']
             },
             datas(){
                 if (this.activeTab === 'addProposedJobs'){
@@ -69,10 +65,13 @@
                     return this.$store.getters.getHiredJobs
                 }else if (this.activeTab === 'addReviews'){
                     return this.$store.getters.getReviews
-                }else if (this.activeTab === 'addProposed'){
-                    return this.$store.getters.getProposed
+                }else if (this.activeTab === 'addMyProposedJob'){
+                    return this.$store.getters.getMyProposedJob
                 }
             },
         },
+        created() {
+            this.activeMenu = this.defaultActiveMenu;
+        }
     }
 </script>

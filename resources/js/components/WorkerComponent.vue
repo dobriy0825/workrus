@@ -31,7 +31,6 @@
         created() {
             this.$store.dispatch('addAuthenticatedUser', this.authenticatedUser);
             this.$store.dispatch('addWorker', this.worker);
-            this.$store.dispatch(this.$store.getters.getActiveTab);
         }
     }
 </script>

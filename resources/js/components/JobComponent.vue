@@ -15,7 +15,7 @@
                 </div>
             </div>
             <div v-show="activeTab === 'addProposedJobs'">
-                <button>Принять задание</button>
+                <button v-on:click="hiredJobs(job.id)">Принять задание</button>
             </div>
         </div>
 
@@ -35,7 +35,9 @@
             }
         },
         methods: {
-
+            hiredJobs(id){
+                this.$store.dispatch('hiredJobs', id);
+            }
         },
         computed: {
             activeTab(){
@@ -44,7 +46,8 @@
             u(){
                 console.log(this.jobs.length);
                 return this.jobs.length > 0
-            }
+            },
+
         },
         mounted() {
             console.log(this.u)

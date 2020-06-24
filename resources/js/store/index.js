@@ -2,34 +2,14 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 
 Vue.use(Vuex);
+import job from './modules/job';
+import menu from "./modules/menu";
 
 export const store = new Vuex.Store({
+    modules: {
+        menu
+    },
     state: {
-        menu: [
-            {
-                value: 'Предложенные задания',
-                authenticatedUserWorker: 'auth',
-                content: 'addProposedJobs'
-            },
-            {
-                value: 'Принятые задания',
-                authenticatedUserWorker: 'auth',
-                content: 'addHiredJobs'
-            },
-            {
-                value: 'Ваше задание',
-                authenticatedUserWorker: 'not auth',
-                content: 'addProposed'
-            },
-            {
-                value: 'Отзывы',
-                authenticatedUserWorker: 'all',
-                content: 'addReviews'
-            },
-        ],
-        activeTab: 'addProposedJobs',
-        count: 0,
-
         authenticatedUser: {},
         authenticatedUserJobs: [],
         proposedJob: [],
@@ -38,6 +18,7 @@ export const store = new Vuex.Store({
         hiredJobs: [],
         proposedJobs: [],
         reviews: [],
+        myProposedJob: []
     },
 
     getters: {
@@ -56,12 +37,6 @@ export const store = new Vuex.Store({
         getWorker(state){
             return state.worker
         },
-        getMenu(state){
-            return state.menu
-        },
-        getActiveTab(state){
-            return state.activeTab
-        },
         getProposedJobs(state){
             return state.proposedJobs;
         },
@@ -70,6 +45,9 @@ export const store = new Vuex.Store({
         },
         getReviews(state){
             return state.reviews;
+        },
+        getMyProposedJob(state){
+            return state.myProposedJob
         }
 
     },
@@ -92,7 +70,7 @@ export const store = new Vuex.Store({
                         state.authenticatedUserJobs = jobs;
                     }
                 }else {
-                    state.authenticatedUserJobs = [];
+                    throw new Error('У Вас нет доступных заданий');
                 }
             }).then(function (id) {
                 let form = new FormData();
@@ -147,6 +125,23 @@ export const store = new Vuex.Store({
                 state.hiredJobs = jobs
             })
         },
+        hiredJobs(state, id){
+            let form = new FormData();
+            form.append('job_id', id);
+            form.append('worker_id', window.location.pathname.split('/')[2]);
+            fetch('/hired_jobs', {
+                method: 'post',
+                body: form,
+                headers: {
+                    'X-CSRF-TOKEN': document.querySelector('meta[name=csrf-token]').getAttribute('content')
+                }
+            }).then(function (response) {
+                let status = response.status;
+                if (status !== 200){
+                    throw new Error('error');
+                }
+            })
+        },
         addReviews(state){
             let url = '/get_reviews/' + this.getters.getWorker.id;
             fetch(url).then(function (response) {
@@ -171,10 +166,16 @@ export const store = new Vuex.Store({
                 state.proposedJobs = jobs
             })
         },
-        addActiveTab(state, value){
-            state.activeTab = value
+
+        addMyProposedJob(state){
+            state.proposedJobs.forEach(function (item) {
+                if (item.user_id === this.authenticatedUser.id){
+                    state.myProposedJob = item;
+                }
+            })
         }
     },
+
     actions: {
         addAuthenticatedUserJobs(store){
             store.commit('clearAuthenticatedUserJobs');
@@ -192,11 +193,15 @@ export const store = new Vuex.Store({
         addHiredJobs(store){
             store.commit('addHiredJobs')
         },
+
+        hiredJobs(store, id){
+            store.commit('hiredJobs', id)
+        },
         addReviews(store){
             store.commit('addReviews')
         },
-        addActiveTab(store, value){
-            store.commit('addActiveTab', value);
+        addMyProposedJob(store){
+            store.commit('addMyProposedJob')
         }
     }
 });
