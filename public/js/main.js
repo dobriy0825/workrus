@@ -124,7 +124,7 @@ document.querySelector('.overlay').addEventListener('click', function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\OSPanel\domains\work\resources\js\entry_points\main.js */"./resources/js/entry_points/main.js");
+module.exports = __webpack_require__(/*! E:\OpenServer\domains\work\resources\js\entry_points\main.js */"./resources/js/entry_points/main.js");
 
 
 /***/ })

@@ -241,12 +241,20 @@ class WorkerController extends Controller
         return $jobs;
     }
 
+    public function deleteProposedJob(Request $request){
+        $worker = Worker::find($request->worker_id);
+        $job = $worker->proposedJobs->where('id', $request->job_id)->first();
+        $worker->proposedJobs()->detach($job->id);
+    }
+
     public function hiredJobs(Request $request){
         $worker = Worker::find($request->worker_id);
         $job = $worker->proposedJobs->where('id', $request->job_id)->first();
         $worker->hiredJobs()->attach($job->id);
         return $job;
     }
+
+
 
     public function getHiredJobs($worker_id)
     {

@@ -1,9 +1,13 @@
 {
-    "/js/all.js": "/js/all.js",
-    "/js/app.js": "/js/app.js",
-    "/js/job/item_job.js": "/js/job/item_job.js",
-    "/js/login.js": "/js/login.js",
-    "/js/main.js": "/js/main.js",
-    "/js/worker/item_worker.js": "/js/worker/item_worker.js",
-    "/css/app.css": "/css/app.css"
+    "/js/all.js": "/js/all.js?id=3f7630497f0b8339e590",
+    "/js/app.js": "/js/app.js?id=37ee750c1496d99bd8d4",
+    "/js/cabinet/jobs.js": "/js/cabinet/jobs.js?id=a6cd4a7e09a1c8b74cbc",
+    "/js/cabinet/my_worker.js": "/js/cabinet/my_worker.js?id=460496c2ae3882fc8456",
+    "/js/cabinet/settings.js": "/js/cabinet/settings.js?id=c3afd1e82036523c06ff",
+    "/js/job/item_job.js": "/js/job/item_job.js?id=7624e1422410c4dbe9b6",
+    "/js/login.js": "/js/login.js?id=cd1fd0b3ea7c808944ca",
+    "/js/main.js": "/js/main.js?id=416e696e1829c6fe98ec",
+    "/js/worker/create_worker.js": "/js/worker/create_worker.js?id=c7e7f17b3bb96f393e2e",
+    "/js/worker/item_worker.js": "/js/worker/item_worker.js?id=34cf9ca125a153ddaff1",
+    "/css/app.css": "/css/app.css?id=f1526fd28eb37720b924"
 }

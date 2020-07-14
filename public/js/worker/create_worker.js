@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1414,14 +1414,14 @@ document.querySelector('.jobs_selection_popup .close_btn').addEventListener('cli
 
 /***/ }),
 
-/***/ 5:
+/***/ 2:
 /*!*****************************************************************!*\
   !*** multi ./resources/js/entry_points/worker/create_worker.js ***!
   \*****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\OSPanel\domains\work\resources\js\entry_points\worker\create_worker.js */"./resources/js/entry_points/worker/create_worker.js");
+module.exports = __webpack_require__(/*! E:\OpenServer\domains\work\resources\js\entry_points\worker\create_worker.js */"./resources/js/entry_points/worker/create_worker.js");
 
 
 /***/ })

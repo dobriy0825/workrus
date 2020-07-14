@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 12);
+/******/ 	return __webpack_require__(__webpack_require__.s = 7);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -104,14 +104,14 @@ document.querySelector('.close_types_of_jobs').addEventListener('click', functio
 
 /***/ }),
 
-/***/ 12:
+/***/ 7:
 /*!**************************************************************!*\
   !*** multi ./resources/js/entry_points/cabinet/my_worker.js ***!
   \**************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\OSPanel\domains\work\resources\js\entry_points\cabinet\my_worker.js */"./resources/js/entry_points/cabinet/my_worker.js");
+module.exports = __webpack_require__(/*! E:\OpenServer\domains\work\resources\js\entry_points\cabinet\my_worker.js */"./resources/js/entry_points/cabinet/my_worker.js");
 
 
 /***/ })

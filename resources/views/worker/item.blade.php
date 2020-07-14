@@ -147,8 +147,7 @@
             @auth()
                 <worker-component v-bind:authenticated-user="{{ Auth::user() }}"
                                   v-bind:worker="{{ $worker }}"></worker-component>
-                <popup-selection-job-component></popup-selection-job-component>
-                @endauth
+            @endauth
         </div>
     </section>
 

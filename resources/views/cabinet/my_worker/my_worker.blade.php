@@ -32,7 +32,7 @@
                         <div class="block">
                             <span class="workerStyle__prop">Имя</span>
                             <hr class="workerStyle__line">
-                            <a href="" class="workerStyle__val">{{ $worker->name }}</a>
+                            <a href="{{ route('worker.item', $worker) }}" class="workerStyle__val">{{ $worker->name }}</a>
                         </div>
                     </div>
                     <!-- Для ПК-->
@@ -45,7 +45,8 @@
                         <div class="block">
                             <span class="workerStyle__prop">Имя</span>
                             <hr class="workerStyle__line">
-                            <a href="" class="workerStyle__val">{{ $worker->name }}</a>
+                            <a href="{{ route('worker.item', $worker) }}"
+                               class="workerStyle__val" style="color:#009999;">{{ $worker->name }}</a>
                         </div>
                         <div class="block">
                             <span class="workerStyle__prop">Фамилия</span>

@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -139,14 +139,14 @@ Object(_auth_login_switcher_field__WEBPACK_IMPORTED_MODULE_0__["default"])();
 
 /***/ }),
 
-/***/ 4:
+/***/ 5:
 /*!**************************************************!*\
   !*** multi ./resources/js/entry_points/login.js ***!
   \**************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\OSPanel\domains\work\resources\js\entry_points\login.js */"./resources/js/entry_points/login.js");
+module.exports = __webpack_require__(/*! E:\OpenServer\domains\work\resources\js\entry_points\login.js */"./resources/js/entry_points/login.js");
 
 
 /***/ })

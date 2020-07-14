@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 8);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -119,14 +119,14 @@ tabs.forEach(function (item) {
 
 /***/ }),
 
-/***/ 3:
+/***/ 8:
 /*!*********************************************************!*\
   !*** multi ./resources/js/entry_points/cabinet/jobs.js ***!
   \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\OSPanel\domains\work\resources\js\entry_points\cabinet\jobs.js */"./resources/js/entry_points/cabinet/jobs.js");
+module.exports = __webpack_require__(/*! E:\OpenServer\domains\work\resources\js\entry_points\cabinet\jobs.js */"./resources/js/entry_points/cabinet/jobs.js");
 
 
 /***/ })

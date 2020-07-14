@@ -1,38 +1,29 @@
 <template>
     <div>
-        <div class="popup_offer_jobs"
-             style="width: 100%;height: 100%;background-color:#000;display: none;justify-content: center;align-items: center;position:fixed;top: 0;left: 0;">
-            <div style="background-color:#fff;padding: 20px;border-radius: 5px;">
+        <div class="popup_user_jobs">
+            <div class="user_jobs">
                 <div>
-                    <h3 style="color: #006363;font-size: 20px;">Выбор задания</h3>
+                    <h3 class="user_jobs_title">Выбор задания</h3>
                 </div>
-                <div style="margin-top: 20px;display:flex;justify-content: space-between" >
-                    <span style="font-size: 18px;color: #006363;font-weight: 700;">Мои задания ()</span>
-                    <a href='' style="font-size: 18px;color: #009999;">+  Создать задание</a>
+                <div class="wrap_tab-link">
+                    <span class="user_jobs_tab">Мои задания ({{authenticatedUserJobs.length}})</span>
+                    <a href='' class="user_jobs_link">+  Создать задание</a>
                 </div>
-                <div style="height: 2px;background-color:#000;margin-bottom: 15px;"></div>
+                <div class="user_jobs_line"></div>
                 <div>
                     <div class="cards">
-                        <div style="display:flex; align-items: center;">
-                        <input type="radio" style="width: 22px;height: 22px;margin-right: 15px;" name="job_id" value=''>
-                        <div class="card">
-                            <div class="data data-height75">
-                                <div class="data__topRow">
-                                    <a href="" class="topRow__name"></a>
-                                    <p class="topRow__price">цена: <span></span>р.</p>
-                                    </div>
-                                <p class="data__description"></p>
-                                <div class="data__bottomRow">
-                                  <p class="bottomRow__create">создание: </p>
-                                  <a href="" class="bottomRow__detailed">Подробнее</a>
-                                  </div>
-                                </div>
-                            </div>
+                        <div v-for="(job, index) in authenticatedUserJobs"
+                             class="user_jobs_card">
+                            <input v-bind:value="job.id"
+                                   v-bind:key="index"
+                                   v-model="selectedJob"
+                                   class="user_jobs_input"
+                                   type="radio" name="job_id">
+                            <job-preview-component v-bind:job="job"></job-preview-component>
                         </div>
                     </div>
-                    <div style="display: flex;justify-content: flex-end">
-                        <button style="background-color: gray;color:white;border: none;border-radius: 2px;padding: 4px 22px;
-                            font-size: 16px;cursor: pointer">Выбрать</button>
+                    <div class="wrap_user_jobs_btn">
+                        <button class="user_jobs_btn" v-on:click="proposedJob">Выбрать</button>
                     </div>
                 </div>
             </div>
@@ -42,8 +33,27 @@
 
 <script>
     export default {
-        mounted() {
-            console.log('Component mounted.')
+        data(){
+            return {
+                selectedJob: '',
+                currentWorker: this.$store.getters['worker/item'],
+            }
+        },
+        methods: {
+            proposedJob(){
+                let options = {
+                    job_id: this.selectedJob,
+                    worker_id: this.currentWorker.id
+                };
+                this.$store.dispatch('worker/proposedJob', options)
+                this.$store.dispatch('user/closeSelectJobPopup')
+            },
+        },
+
+        computed: {
+            authenticatedUserJobs(){
+                return this.$store.getters['user/getAuthenticatedUserJobs']
+            }
         }
     }
 </script>

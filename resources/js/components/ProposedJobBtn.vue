@@ -1,7 +1,8 @@
 <template>
     <div>
-        <button class="proposed_job_btn" v-on:click="addAuthenticatedUserJobs">Предложить задание</button>
-        <not-jobs-component v-if="popup"></not-jobs-component>
+        <button class="proposed_job_btn" v-on:click="r">Предложить задание</button>
+        <not-jobs-component v-if="notJobsPopup"></not-jobs-component>
+        <popup-select-job-component v-if="selectJobPopup"></popup-select-job-component>
     </div>
 </template>
 
@@ -9,24 +10,21 @@
     export default {
         data(){
             return {
-                popup: false
             }
         },
 
         methods: {
-            addAuthenticatedUserJobs(){
-                this.emptyJobs();
-                this.$store.dispatch('addAuthenticatedUserJobs');
+            r(){
+                this.$store.dispatch('user/loadAuthenticatedUserJobs')
             },
-            emptyJobs(){
-                this.popup = this.authenticatedUserJobs < 1;
-            }
         },
         computed: {
-            authenticatedUserJobs(){
-                return this.$store.getters.getAuthenticatedUserJobs;
+            notJobsPopup(){
+                return this.$store.getters['user/getNotJobsPopup']
             },
-
+            selectJobPopup(){
+                return this.$store.getters['user/getSelectJobPopup']
+            }
         }
     }
 </script>

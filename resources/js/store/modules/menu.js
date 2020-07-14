@@ -25,21 +25,8 @@ export default {
         ],
     },
     getters: {
-        items(state){
+        items(state) {
             return state.menu
-        },
-        getActiveTab(state){
-            return state.activeTab
-        },
-    },
-    mutations: {
-        addActiveTab(state, value) {
-            state.activeTab = value
-        },
-    },
-    actions: {
-        addActiveTab(store, value){
-            store.commit('addActiveTab', value);
         },
     }
 }

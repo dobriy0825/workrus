@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -981,14 +981,14 @@ function ff() {
 
 /***/ }),
 
-/***/ 2:
+/***/ 3:
 /*!***************************************************************!*\
   !*** multi ./resources/js/entry_points/worker/item_worker.js ***!
   \***************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\OSPanel\domains\work\resources\js\entry_points\worker\item_worker.js */"./resources/js/entry_points/worker/item_worker.js");
+module.exports = __webpack_require__(/*! E:\OpenServer\domains\work\resources\js\entry_points\worker\item_worker.js */"./resources/js/entry_points/worker/item_worker.js");
 
 
 /***/ })
